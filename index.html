@@ -10087,8 +10087,24 @@ const GAME_CFG = (function() {
     else { window.__goHome(false); }
   });
 
+  // Open the BDG Win page directly; skip the platform-selection/home screen.
   var h = (location.hash || '').replace('#','');
-  if(h && tplFor(h)){ window.__openPage(h, '', false); }
+  if(h && tplFor(h)){
+    window.__openPage(h, '', false);
+  } else {
+    try {
+      window.__LS.setItem('currentGame', JSON.stringify({
+        name: 'BDG Win',
+        logo: 'logo7.png',
+        tagKey: 'Bdgwin'
+      }));
+    } catch(e) {}
+    window.__openPage(
+      'game.html',
+      '?tag=Bdgwin&name=BDG%20Win&logo=logo7.png',
+      false
+    );
+  }
 })();
 </script>
 
