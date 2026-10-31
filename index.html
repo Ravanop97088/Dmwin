@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 <style>
+    /* Back button removed from the top navigation bars */
+    #btn-back { display: none !important; }
+
   #page-viewer { display:none; position:fixed; inset:0; z-index:999999; background:#0a0a0a; }
   #page-viewer.active { display:block; }
   #pageFrame { width:100%; height:100%; border:0; display:block; }
@@ -4047,7 +4050,6 @@ window.__QS = decodeURIComponent("__QUERY__");
 
   <!-- TOP BAR -->
   <div id="top-bar">
-    <button class="tb-btn" id="btn-back"><i class="fas fa-arrow-left"></i><span>Back</span></button>
     <img id="top-bar-logo" src="yes.png" alt="logo" onerror="this.style.opacity='0'">
     <button class="tb-btn" id="btn-history"><i class="fas fa-history"></i><span>History</span></button>
   </div>
@@ -5087,7 +5089,8 @@ const GAME_CFG = (function() {
     /* ════════════════════════════════════════════════════════
        TOP BAR BUTTONS
     ════════════════════════════════════════════════════════ */
-    document.getElementById('btn-back').addEventListener('click', () => {
+    const backButton = document.getElementById('btn-back');
+    if (backButton) backButton.addEventListener('click', () => {
         __loc.href = 'indexxx.html';
     });
     document.getElementById('btn-history').addEventListener('click', () => {
@@ -7998,7 +8001,6 @@ window.__QS = decodeURIComponent("__QUERY__");
 
   <!-- TOP BAR -->
   <div id="top-bar">
-    <button class="tb-btn" id="btn-back"><i class="fas fa-arrow-left"></i><span>Back</span></button>
     <img id="top-bar-logo" src="logo6.png" alt="logo" onerror="this.style.opacity='0'">
     <button class="tb-btn" id="btn-history"><i class="fas fa-history"></i><span>History</span></button>
   </div>
@@ -9016,7 +9018,8 @@ const GAME_CFG = (function() {
     /* ════════════════════════════════════════════════════════
        TOP BAR BUTTONS
     ════════════════════════════════════════════════════════ */
-    document.getElementById('btn-back').addEventListener('click', () => {
+    const backButton = document.getElementById('btn-back');
+    if (backButton) backButton.addEventListener('click', () => {
         __loc.href = 'indexxx.html';
     });
     document.getElementById('btn-history').addEventListener('click', () => {
